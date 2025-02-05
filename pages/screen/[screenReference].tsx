@@ -32,34 +32,34 @@ export default function ScreenDetailsPage({ data, error }: ScreenDetailsProps) {
   if (!data) return <div className="text-gray-500 p-4">No data available</div>;
 
   return (
-    <div className="min-h-screen p-6 flex flex-col md:flex-row gap-4 bg-gray-50">
-      {/* Left Panel - Summary */}
-      <aside className="md:w-1/3">
-        {/* Param title and Completed Status */}
-        <div className="mb-4">
-          <div className="flex items-center space-x-2">
-            <h1 className="text-lg font-bold text-gray-800">{data.screenReference}</h1>
-            <div className="flex items-center space-x-1">
-              <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-              <span className="pl-2 text-xs text-black-500">Completed</span>
-            </div>
+    <div className="min-h-screen p-6 bg-white">
+      {/* Header: Param Title with Completed Status */}
+      <header className="mb-6">
+        <div className="flex items-center space-x-2">
+          <h1 className="text-lg font-bold text-gray-800">{data.screenReference}</h1>
+          <div className="flex items-center space-x-1">
+            <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+            <span className="pl-2 text-xs text-black-500">Completed</span>
           </div>
         </div>
+      </header>
 
-        {/* Record Summary */}
-        <h2 className="text-lg font-semibold mb-2">Record Summary</h2>
-        <SummaryPanel data={data} />
-      </aside>
+      {/* Panels: Left for SummaryPanel, Right for TestResultCard */}
+      <div className="flex flex-col md:flex-row gap-4">
+        <aside className="md:w-1/3">
+          <h2 className="text-lg font-semibold mb-2">Record Summary</h2>
+          <SummaryPanel data={data} />
+        </aside>
 
-      {/* Right Panel - Test Results */}
-      <main className="flex-1">
-        <h1 className="text-xl font-bold mb-4">Test bookings</h1>
-        <div className="space-y-4">
-          {data.serviceRequests.map((request, index) => (
-            <TestResultCard key={index} request={request} />
-          ))}
-        </div>
-      </main>
+        <main className="md:w-2/3">
+          <h1 className="text-xl font-bold mb-4">Test bookings</h1>
+          <div className="space-y-4">
+            {data.serviceRequests.map((request, index) => (
+              <TestResultCard key={index} request={request} />
+            ))}
+          </div>
+        </main>
+      </div>
     </div>
   );
 }
