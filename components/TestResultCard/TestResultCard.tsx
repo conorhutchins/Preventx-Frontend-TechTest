@@ -1,8 +1,8 @@
 import { ScreenDetailsResponse } from "../../test-utilities/api/contract";
-import { formatDate } from "../../utils/formatDate";
-import { getStatusColors } from "../../utils/getStatusColor";
-import { getCaseCodeColors } from "../../utils/getCaseCodeColors";
-import { toTitleCase } from "../../utils/toTitleCase";
+import { formatDate } from "../../utils/formatDate/formatDate";
+import { getStatusColors } from "../../utils/getStatusColor/getStatusColor";
+import { getCaseCodeColors } from "../../utils/getCaseCodeColors/getCaseCodeColors";
+import { toTitleCase } from "../../utils/toTitleCase/toTitleCase";
 
 interface TestResultCardProps {
   request: ScreenDetailsResponse["serviceRequests"][number];

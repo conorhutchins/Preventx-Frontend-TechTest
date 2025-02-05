@@ -1,5 +1,5 @@
 import { ScreenDetailsResponse } from "../../test-utilities/api/contract";
-import { deleteDayOfWeekFromDate } from "../../utils/deleteDayOfWeekFromDate";
+import { deleteDayOfWeekFromDate } from "../../utils/deleteDayOfWeekFromDate/deleteDayOfWeekFromDate";
 import { FaBarcode, FaTag, FaBox, FaUser, FaCalendarAlt, FaBaby } from "react-icons/fa";
 import { MdCalendarToday } from "react-icons/md";
 
