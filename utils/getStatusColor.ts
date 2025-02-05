@@ -1,24 +1,24 @@
 export const getStatusColors = (level: string) => {
   const colors = {
     abnormal: {
-      text: "text-[#BA1C1C]",
-      bar: "bg-[#BA1C1C]",
-      bg: "bg-[#FEF1F1]",
+      text: "text-status-abnormal",
+      bar: "bg-status-abnormal",
+      bg: "bg-status-abnormalBg",
     },
     normal: {
-      text: "text-[#157F3C]",
-      bar: "bg-[#157F3C]",
-      bg: "bg-[#F2FDF5]",
+      text: "text-status-normal",
+      bar: "bg-status-normal",
+      bg: "bg-status-normalBg",
     },
     warning: {
-      text: "text-[#A26107]",
-      bar: "bg-[#A26107]",
-      bg: "bg-[#FEFCE7]",
+      text: "text-status-warning",
+      bar: "bg-status-warning",
+      bg: "bg-status-warningBg",
     },
     issue: {
-      text: "text-[#0369A0]",
-      bar: "bg-[#0369A0]",
-      bg: "bg-[#F0F9FF]",
+      text: "text-status-issue",
+      bar: "bg-status-issue",
+      bg: "bg-status-issueBg",
     },
   };
 
