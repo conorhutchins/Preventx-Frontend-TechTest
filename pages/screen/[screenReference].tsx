@@ -52,13 +52,19 @@ export default function ScreenDetailsPage({ data, error }: ScreenDetailsProps) {
         </aside>
 
         <main className="md:w-2/3">
-          <h1 className="text-xl font-bold mb-4">Test bookings</h1>
-          <div className="space-y-4">
-            {data.serviceRequests.map((request, index) => (
-              <TestResultCard key={index} request={request} />
-            ))}
-          </div>
-        </main>
+  <h1 className="text-xl font-bold mb-4">Test bookings</h1>
+
+  {/* Quick fallback for if no service requests */}
+  {data.serviceRequests.length === 0 ? (
+    <p className="text-gray-500 text-center">Sorry, there's no test results available for the SR provided.</p>
+  ) : (
+    <div className="space-y-4">
+      {data.serviceRequests.map((request, index) => (
+        <TestResultCard key={index} request={request} />
+      ))}
+    </div>
+  )}
+</main>
       </div>
     </div>
   );
